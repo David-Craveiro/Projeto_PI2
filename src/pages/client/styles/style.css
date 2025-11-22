@@ -25,6 +25,11 @@ body {
     color: var(--cor-texto);
 }
 
+/* Reserva espaço para o header fixo no topo */
+body {
+    padding-top: 80px; /* evita que o conteúdo fique escondido atrás do header */
+}
+
 .container {
     max-width: 1280px;
     margin: 0 auto;
@@ -85,8 +90,13 @@ a {
 /* === HEADER === */
 header {
     background-color: var(--cor-fundo-medio);
-    padding: 1.2rem 0;
     border-bottom: 1px solid var(--cor-borda);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px; /* altura fixa do header */
+    z-index: 1000;
 }
 header .container {
     display: flex;
