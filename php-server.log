@@ -218,3 +218,95 @@
 [Sat Nov 22 22:28:46 2025] 127.0.0.1:44252 Accepted
 [Sat Nov 22 22:28:46 2025] 127.0.0.1:44252 [200]: GET /src/assets/images/logodelta.png
 [Sat Nov 22 22:28:46 2025] 127.0.0.1:44252 Closing
+[Sat Nov 22 22:33:00 2025] 127.0.0.1:56694 Accepted
+[Sat Nov 22 22:33:00 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 22 22:33:00 2025] 127.0.0.1:56694 [302]: GET /
+[Sat Nov 22 22:33:00 2025] 127.0.0.1:56694 Closing
+[Sat Nov 22 22:33:09 2025] 127.0.0.1:49916 Accepted
+[Sat Nov 22 22:33:09 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 22 22:33:09 2025] 127.0.0.1:49916 [302]: GET /
+[Sat Nov 22 22:33:09 2025] 127.0.0.1:49916 Closing
+[Sat Nov 22 22:33:18 2025] 127.0.0.1:36084 Accepted
+[Sat Nov 22 22:33:18 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 22 22:33:18 2025] 127.0.0.1:36084 [200]: GET /src/pages/client/index.php
+[Sat Nov 22 22:33:18 2025] 127.0.0.1:36084 Closing
+[Sat Nov 22 22:38:44 2025] 127.0.0.1:55598 Accepted
+[Sat Nov 22 22:38:44 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 22 22:38:44 2025] 127.0.0.1:55598 [302]: GET /src/pages/admin/admin-produtos.php
+[Sat Nov 22 22:38:44 2025] 127.0.0.1:55598 Closing
+[Sat Nov 22 22:43:19 2025] 127.0.0.1:41708 Accepted
+[Sat Nov 22 22:43:19 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 22 22:43:19 2025] 127.0.0.1:41708 [200]: GET /src/pages/client/carrinho.php
+[Sat Nov 22 22:43:19 2025] 127.0.0.1:41708 Closing
+[Sat Nov 22 22:43:21 2025] 127.0.0.1:41710 Accepted
+[Sat Nov 22 22:43:21 2025] 127.0.0.1:41710 [200]: GET /src/pages/admin/styles/admin-style.css
+[Sat Nov 22 22:43:21 2025] 127.0.0.1:41710 Closing
+[Sat Nov 22 22:43:21 2025] 127.0.0.1:41714 Accepted
+[Sat Nov 22 22:43:21 2025] 127.0.0.1:41714 [200]: GET /src/pages/client/styles/style.css
+[Sat Nov 22 22:43:21 2025] 127.0.0.1:41714 Closing
+[Sat Nov 22 22:43:21 2025] 127.0.0.1:41724 Accepted
+[Sat Nov 22 22:43:21 2025] 127.0.0.1:41724 [200]: GET /src/assets/images/logodelta.png
+[Sat Nov 22 22:43:21 2025] 127.0.0.1:41724 Closing
+[Sat Nov 22 22:43:25 2025] 127.0.0.1:39422 Accepted
+[Sat Nov 22 22:43:25 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 22 22:43:25 2025] 127.0.0.1:39422 [200]: GET /src/pages/client/carrinho.php
+[Sat Nov 22 22:43:25 2025] 127.0.0.1:39422 Closing
+[Sat Nov 22 22:43:25 2025] 127.0.0.1:39436 Accepted
+[Sat Nov 22 22:43:25 2025] 127.0.0.1:39436 [200]: GET /src/assets/images/logodelta.png
+[Sat Nov 22 22:43:25 2025] 127.0.0.1:39436 Closing
+[Sat Nov 22 22:43:25 2025] 127.0.0.1:39438 Accepted
+[Sat Nov 22 22:43:25 2025] 127.0.0.1:39438 [200]: GET /src/pages/client/styles/style.css
+[Sat Nov 22 22:43:25 2025] 127.0.0.1:39438 Closing
+[Sat Nov 22 22:43:25 2025] 127.0.0.1:39444 Accepted
+[Sat Nov 22 22:43:25 2025] 127.0.0.1:39444 [200]: GET /src/pages/admin/styles/admin-style.css
+[Sat Nov 22 22:43:25 2025] 127.0.0.1:39444 Closing
+[Sat Nov 22 22:43:30 2025] 127.0.0.1:39448 Accepted
+[Sat Nov 22 22:43:30 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 22 22:43:30 2025] 127.0.0.1:39448 [200]: GET /src/pages/client/index.php
+[Sat Nov 22 22:43:30 2025] 127.0.0.1:39448 Closing
+[Sat Nov 22 22:43:30 2025] 127.0.0.1:39454 Accepted
+[Sat Nov 22 22:43:30 2025] 127.0.0.1:39454 [200]: GET /src/pages/admin/styles/admin-style.css
+[Sat Nov 22 22:43:30 2025] 127.0.0.1:39454 Closing
+[Sat Nov 22 22:43:30 2025] 127.0.0.1:39458 Accepted
+[Sat Nov 22 22:43:30 2025] 127.0.0.1:39462 Accepted
+[Sat Nov 22 22:43:30 2025] 127.0.0.1:39474 Accepted
+[Sat Nov 22 22:43:30 2025] 127.0.0.1:39476 Accepted
+[Sat Nov 22 22:43:30 2025] 127.0.0.1:39458 [200]: GET /src/assets/images/SpiderMan2.png
+[Sat Nov 22 22:43:30 2025] 127.0.0.1:39458 Closing
+[Sat Nov 22 22:43:30 2025] 127.0.0.1:39474 [200]: GET /src/assets/images/logodelta.png
+[Sat Nov 22 22:43:30 2025] 127.0.0.1:39474 Closing
+[Sat Nov 22 22:43:30 2025] 127.0.0.1:39462 [200]: GET /src/assets/images/FC25.png
+[Sat Nov 22 22:43:30 2025] 127.0.0.1:39462 Closing
+[Sat Nov 22 22:43:30 2025] 127.0.0.1:39476 [200]: GET /src/assets/images/FarCryBanner.png
+[Sat Nov 22 22:43:30 2025] 127.0.0.1:39476 Closing
+[Sat Nov 22 22:43:31 2025] 127.0.0.1:39482 Accepted
+[Sat Nov 22 22:43:31 2025] 127.0.0.1:39486 Accepted
+[Sat Nov 22 22:43:31 2025] 127.0.0.1:39482 [200]: GET /src/pages/client/styles/style.css
+[Sat Nov 22 22:43:31 2025] 127.0.0.1:39482 Closing
+[Sat Nov 22 22:43:31 2025] 127.0.0.1:39486 [200]: GET /src/assets/images/f1.jpg
+[Sat Nov 22 22:43:31 2025] 127.0.0.1:39486 Closing
+[Sat Nov 22 22:44:09 2025] 127.0.0.1:40380 Accepted
+[Sat Nov 22 22:44:09 2025] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[Sat Nov 22 22:44:09 2025] 127.0.0.1:40380 [200]: GET /src/pages/client/index.php
+[Sat Nov 22 22:44:09 2025] 127.0.0.1:40380 Closing
+[Sat Nov 22 22:44:09 2025] 127.0.0.1:40392 Accepted
+[Sat Nov 22 22:44:09 2025] 127.0.0.1:40406 Accepted
+[Sat Nov 22 22:44:09 2025] 127.0.0.1:40416 Accepted
+[Sat Nov 22 22:44:10 2025] 127.0.0.1:40430 Accepted
+[Sat Nov 22 22:44:10 2025] 127.0.0.1:40406 [200]: GET /src/assets/images/SpiderMan2.png
+[Sat Nov 22 22:44:10 2025] 127.0.0.1:40406 Closing
+[Sat Nov 22 22:44:10 2025] 127.0.0.1:40392 [200]: GET /src/pages/admin/styles/admin-style.css
+[Sat Nov 22 22:44:10 2025] 127.0.0.1:40392 Closing
+[Sat Nov 22 22:44:10 2025] 127.0.0.1:40416 [200]: GET /src/assets/images/FarCryBanner.png
+[Sat Nov 22 22:44:10 2025] 127.0.0.1:40416 Closing
+[Sat Nov 22 22:44:10 2025] 127.0.0.1:40430 [200]: GET /src/assets/images/f1.jpg
+[Sat Nov 22 22:44:10 2025] 127.0.0.1:40430 Closing
+[Sat Nov 22 22:44:10 2025] 127.0.0.1:40442 Accepted
+[Sat Nov 22 22:44:10 2025] 127.0.0.1:40448 Accepted
+[Sat Nov 22 22:44:10 2025] 127.0.0.1:40464 Accepted
+[Sat Nov 22 22:44:10 2025] 127.0.0.1:40442 [200]: GET /src/pages/client/styles/style.css
+[Sat Nov 22 22:44:10 2025] 127.0.0.1:40448 [200]: GET /src/assets/images/logodelta.png
+[Sat Nov 22 22:44:10 2025] 127.0.0.1:40464 [200]: GET /src/assets/images/FC25.png
+[Sat Nov 22 22:44:10 2025] 127.0.0.1:40442 Closing
+[Sat Nov 22 22:44:10 2025] 127.0.0.1:40448 Closing
+[Sat Nov 22 22:44:10 2025] 127.0.0.1:40464 Closing

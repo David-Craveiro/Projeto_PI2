@@ -1,3 +1,15 @@
+
+
+
+
+
+php -S 0.0.0.0:8000 -t /workspaces/Projeto_PI2
+
+
+
+
+
+
 Torne esse projeto funcional em PHP, verifique todas as páginas HTML faça o inlude para PHP, com Banco de dados local, faça os testes e deixe disponível na porta 8000
 
 O prompt abaixo descreve o projeto em si.

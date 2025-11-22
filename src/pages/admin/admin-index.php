@@ -1,8 +1,6 @@
 <?php
 require_once __DIR__ . '/../../includes/db.php';
 require_once __DIR__ . '/../../includes/auth.php';
-
-// Protege rota: precisa estar logado e ser admin
 if (!isLogged() || empty($_SESSION['is_admin'])) {
     header('Location: /src/pages/client/login.php');
     exit;
@@ -13,7 +11,7 @@ if (!isLogged() || empty($_SESSION['is_admin'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categorias - Delta Store</title>
+    <title>Dashboard - Delta Store</title>
     <link rel="stylesheet" href="/src/pages/admin/styles/admin-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/src/pages/client/styles/style.css">
@@ -38,42 +36,25 @@ if (!isLogged() || empty($_SESSION['is_admin'])) {
         </aside>
 
         <main class="main-content">
-            <header class="main-header">
-                <input type="search" placeholder="Pesquisar...">
-                <button class="btn-primary">Cadastrar categoria</button>
+            <header>
+                <h1>Seja Bem Vindo(a), Aqui Estão Algumas Instruções para melhor navegação.</h1>
             </header>
-            <section class="content-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>NOME</th>
-                            <th>DESCRIÇÃO</th>
-                            <th>AÇÕES</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Categorias estáticas por enquanto; futura tabela de categorias no DB -->
-                        <tr>
-                            <td>101</td>
-                            <td>Consoles</td>
-                            <td>Consoles e hardware</td>
-                            <td class="actions">
-                                <a href="#" class="delete">excluir</a>
-                                <a href="#" class="edit">editar</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>516</td>
-                            <td>Controles</td>
-                            <td>Controles e periféricos</td>
-                            <td class="actions">
-                                <a href="#" class="delete">excluir</a>
-                                <a href="#" class="edit">editar</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <section class="instructions-grid">
+                <div class="instruction-card">
+                    <img src="/src/assets/images/cadastrar-produto.png" alt="Criar Produtos">
+                    <h3>CRIAR PRODUTOS</h3>
+                    <p>Crie, edite e exclua produtos com apenas alguns cliques.</p>
+                </div>
+                <div class="instruction-card">
+                     <img src="/src/assets/images/cadastrar-categoria.png" alt="Criar Categoria">
+                    <h3>CRIAR CATEGORIA</h3>
+                    <p>Crie, edite e exclua categorias de forma simples e rápida.</p>
+                </div>
+                <div class="instruction-card">
+                     <img src="/src/assets/images/cadastrar-usuario.png" alt="Gerenciar Usuários">
+                    <h3>GERENCIAR USUÁRIOS</h3>
+                    <p>Crie, edite e exclua usuários de forma simples e rápida.</p>
+                </div>
             </section>
         </main>
     </div>
