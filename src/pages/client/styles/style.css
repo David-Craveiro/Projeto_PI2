@@ -278,6 +278,11 @@ header .container {
     padding-top: 4rem;
     margin-top: 6rem;
     border-top: 1px solid var(--cor-borda);
+    clear: both; /* garante que o footer fique abaixo de elementos flutuantes */
+    width: 100%;
+    position: relative; /* posição padrão para que bottom/left funcionem se necessário */
+    left: 0;
+    box-sizing: border-box;
 }
 .footer-grid {
     display: grid;

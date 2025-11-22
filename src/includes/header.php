@@ -8,7 +8,12 @@ if (session_status() === PHP_SESSION_NONE) session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delta Store</title>
     <link rel="stylesheet" href="/src/pages/client/styles/style.css">
-    <link rel="stylesheet" href="/src/pages/admin/styles/admin-style.css">
+    <?php
+    // Carrega o CSS do admin apenas quando a rota contém /src/pages/admin
+    $requestUri = $_SERVER['REQUEST_URI'] ?? '';
+    if (strpos($requestUri, '/src/pages/admin') !== false) : ?>
+        <link rel="stylesheet" href="/src/pages/admin/styles/admin-style.css">
+    <?php endif; ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
