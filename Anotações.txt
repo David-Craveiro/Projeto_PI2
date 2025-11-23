@@ -7,6 +7,12 @@ php -S 0.0.0.0:8000 -t /workspaces/Projeto_PI2
 
 https://cuddly-invention-jrjxgrrp9rv2qww6-8000.app.github.dev/src/pages/admin/admin-index.php
 
+src/pages/admin/admin-produtos.php
+
+src/pages/admin/admin-categorias.php
+
+src/pages/admin/admin-usuarios.php
+
 Login: david@teste.com
 Senha: teste
 

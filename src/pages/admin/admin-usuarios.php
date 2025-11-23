@@ -42,14 +42,40 @@ $users = queryAll('SELECT id, email, is_admin FROM users ORDER BY id DESC');
             <section class="content-table">
                 <table>
                     <thead>
-                        <tr><th>ID</th><th>Email</th><th>Admin</th></tr>
+                        <tr>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>Admin</th>
+                            <th>Ações</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <?php foreach($users as $u): ?>
                         <tr>
                             <td><?php echo $u['id']; ?></td>
-                            <td><?php echo htmlspecialchars($u['email']); ?></td>
+                            <td><?php echo htmlspecialchars($u['email']); ?>
+                                <?php if (!empty($_SESSION['user_id']) && $_SESSION['user_id'] == $u['id']): ?>
+                                    <small> (você)</small>
+                                <?php endif; ?>
+                            </td>
                             <td><?php echo !empty($u['is_admin']) ? 'Sim' : 'Não'; ?></td>
+                            <td>
+                                <div class="actions-cell">
+                                    <form action="/src/actions/admin_toggle_admin.php" method="post" style="display:inline-block; margin-right:6px;">
+                                        <input type="hidden" name="id" value="<?php echo $u['id']; ?>">
+                                        <?php $disable_toggle = (!empty($_SESSION['user_id']) && $_SESSION['user_id'] == $u['id']); ?>
+                                        <button type="submit" <?php echo $disable_toggle ? 'disabled' : ''; ?>>
+                                            <?php echo !empty($u['is_admin']) ? 'Remover Admin' : 'Tornar Admin'; ?>
+                                        </button>
+                                    </form>
+
+                                    <form action="/src/actions/admin_delete_user.php" method="post" style="display:inline-block;" onsubmit="return confirm('Confirma exclusão do usuário <?php echo htmlspecialchars($u['email']); ?>?');">
+                                        <input type="hidden" name="id" value="<?php echo $u['id']; ?>">
+                                        <?php $disable_delete = (!empty($_SESSION['user_id']) && $_SESSION['user_id'] == $u['id']); ?>
+                                        <button type="submit" <?php echo $disable_delete ? 'disabled' : ''; ?>>Deletar</button>
+                                    </form>
+                                </div>
+                            </td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
