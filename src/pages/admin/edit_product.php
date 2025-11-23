@@ -35,6 +35,9 @@ require_once __DIR__ . '/../../includes/header.php';
         <label>Descrição:<br>
             <textarea name="description" rows="4" cols="50"><?php echo htmlspecialchars($product['description'] ?? ''); ?></textarea>
         </label><br>
+        <label>Estoque:<br>
+            <input type="number" name="stock" min="0" value="<?php echo (int)($product['stock'] ?? 0); ?>">
+        </label><br>
         <button type="submit" class="btn btn-primary">Salvar alterações</button>
         <a href="/src/pages/admin/admin-produtos.php" class="btn">Cancelar</a>
     </form>

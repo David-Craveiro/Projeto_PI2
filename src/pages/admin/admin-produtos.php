@@ -44,6 +44,7 @@ $products = queryAll('SELECT * FROM products ORDER BY id DESC');
                     <input type="text" name="image" placeholder="URL da imagem (ex: /src/assets/images/img.png)">
                     <input type="number" step="0.01" name="price" placeholder="Preço" required>
                     <input type="text" name="description" placeholder="Descrição do produto (curta)">
+                    <input type="number" name="stock" min="0" placeholder="Estoque">
                     <button type="submit" class="btn-primary">Adicionar produto</button>
                 </form>
             </header>
@@ -55,6 +56,7 @@ $products = queryAll('SELECT * FROM products ORDER BY id DESC');
                             <th>NOME</th>
                             <th>IMAGEM</th>
                             <th>DESCRIÇÃO</th>
+                            <th>ESTOQUE</th>
                             <th>PREÇO</th>
                             <th>AÇÕES</th>
                         </tr>
@@ -66,6 +68,7 @@ $products = queryAll('SELECT * FROM products ORDER BY id DESC');
                             <td><?php echo htmlspecialchars($p['name']); ?></td>
                             <td><img src="<?php echo htmlspecialchars($p['image']); ?>" alt="" style="max-width:80px;"></td>
                             <td><?php echo nl2br(htmlspecialchars(mb_strimwidth($p['description'] ?? '', 0, 120, '...'))); ?></td>
+                            <td><?php echo (int)($p['stock'] ?? 0); ?></td>
                             <td>R$ <?php echo number_format($p['price'],2,',','.'); ?></td>
                             <td class="actions">
                                 <a class="edit" href="/src/pages/admin/edit_product.php?id=<?php echo $p['id']; ?>">editar</a>

@@ -15,7 +15,8 @@ CREATE TABLE IF NOT EXISTS products (
     name TEXT NOT NULL,
     price REAL NOT NULL,
     image TEXT,
-    description TEXT
+    description TEXT,
+    stock INTEGER DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS orders (
