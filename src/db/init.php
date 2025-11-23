@@ -16,11 +16,11 @@ $pdo->exec($sql);
 $count = $pdo->query('SELECT COUNT(*) FROM products')->fetchColumn();
 if ($count == 0) {
     $products = [
-        ['Marvel\'s Spider-Man 2 PS5', 263.34, '/src/assets/images/SpiderMan2.png'],
-        ['EA Sports FC 25 PS5', 350.00, '/src/assets/images/FC25.png'],
-        ['F1: 2025', 370.00, '/src/assets/images/f1.jpg']
+        ['Marvel\'s Spider-Man 2 PS5', 263.34, '/src/assets/images/SpiderMan2.png', 'Jogo de ação e aventura no PS5.'],
+        ['EA Sports FC 25 PS5', 350.00, '/src/assets/images/FC25.png', 'Jogo de futebol com recursos atualizados.'],
+        ['F1: 2025', 370.00, '/src/assets/images/f1.jpg', 'Simulador de corrida oficial da temporada 2025.']
     ];
-    $stmt = $pdo->prepare('INSERT INTO products (name, price, image) VALUES (?, ?, ?)');
+    $stmt = $pdo->prepare('INSERT INTO products (name, price, image, description) VALUES (?, ?, ?, ?)');
     foreach ($products as $p) {
         $stmt->execute($p);
     }

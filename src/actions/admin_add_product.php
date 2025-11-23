@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $name = trim($_POST['name'] ?? '');
 $image = trim($_POST['image'] ?? '');
 $price = $_POST['price'] ?? '';
+$description = trim($_POST['description'] ?? '');
 
 $errors = [];
 if ($name === '') $errors[] = 'Nome é obrigatório.';
@@ -25,8 +26,8 @@ if (!empty($errors)) {
     exit;
 }
 
-$stmt = $pdo->prepare('INSERT INTO products (name, price, image) VALUES (?, ?, ?)');
-$stmt->execute([$name, (float)$price, $image]);
+$stmt = $pdo->prepare('INSERT INTO products (name, price, image, description) VALUES (?, ?, ?, ?)');
+$stmt->execute([$name, (float)$price, $image, $description]);
 
 header('Location: /src/pages/admin/admin-produtos.php');
 exit;

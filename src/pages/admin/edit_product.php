@@ -32,6 +32,9 @@ require_once __DIR__ . '/../../includes/header.php';
         <label>Preço:<br>
             <input type="number" step="0.01" name="price" value="<?php echo htmlspecialchars($product['price']); ?>" required>
         </label><br>
+        <label>Descrição:<br>
+            <textarea name="description" rows="4" cols="50"><?php echo htmlspecialchars($product['description'] ?? ''); ?></textarea>
+        </label><br>
         <button type="submit" class="btn btn-primary">Salvar alterações</button>
         <a href="/src/pages/admin/admin-produtos.php" class="btn">Cancelar</a>
     </form>

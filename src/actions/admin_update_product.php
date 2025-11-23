@@ -15,6 +15,7 @@ $id = isset($_POST['id']) ? (int)$_POST['id'] : 0;
 $name = trim($_POST['name'] ?? '');
 $image = trim($_POST['image'] ?? '');
 $price = $_POST['price'] ?? '';
+$description = trim($_POST['description'] ?? '');
 
 if ($id <= 0 || $name === '' || $price === '' || !is_numeric($price)) {
     $msg = 'Dados inválidos.';
@@ -23,8 +24,8 @@ if ($id <= 0 || $name === '' || $price === '' || !is_numeric($price)) {
 }
 
 try {
-    $stmt = $pdo->prepare('UPDATE products SET name = ?, price = ?, image = ? WHERE id = ?');
-    $stmt->execute([$name, (float)$price, $image, $id]);
+    $stmt = $pdo->prepare('UPDATE products SET name = ?, price = ?, image = ?, description = ? WHERE id = ?');
+    $stmt->execute([$name, (float)$price, $image, $description, $id]);
     $msg = 'Produto atualizado com sucesso.';
 } catch (Exception $e) {
     $msg = 'Erro ao atualizar produto: ' . $e->getMessage();

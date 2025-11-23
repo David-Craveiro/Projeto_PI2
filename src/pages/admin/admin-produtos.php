@@ -43,6 +43,7 @@ $products = queryAll('SELECT * FROM products ORDER BY id DESC');
                     <input type="text" name="name" placeholder="Nome do produto" required>
                     <input type="text" name="image" placeholder="URL da imagem (ex: /src/assets/images/img.png)">
                     <input type="number" step="0.01" name="price" placeholder="Preço" required>
+                    <input type="text" name="description" placeholder="Descrição do produto (curta)">
                     <button type="submit" class="btn-primary">Adicionar produto</button>
                 </form>
             </header>

@@ -14,7 +14,8 @@ CREATE TABLE IF NOT EXISTS products (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     price REAL NOT NULL,
-    image TEXT
+    image TEXT,
+    description TEXT
 );
 
 CREATE TABLE IF NOT EXISTS orders (
