@@ -54,6 +54,7 @@ $products = queryAll('SELECT * FROM products ORDER BY id DESC');
                             <th>ID</th>
                             <th>NOME</th>
                             <th>IMAGEM</th>
+                            <th>DESCRIÇÃO</th>
                             <th>PREÇO</th>
                             <th>AÇÕES</th>
                         </tr>
@@ -64,6 +65,7 @@ $products = queryAll('SELECT * FROM products ORDER BY id DESC');
                             <td><?php echo $p['id']; ?></td>
                             <td><?php echo htmlspecialchars($p['name']); ?></td>
                             <td><img src="<?php echo htmlspecialchars($p['image']); ?>" alt="" style="max-width:80px;"></td>
+                            <td><?php echo nl2br(htmlspecialchars(mb_strimwidth($p['description'] ?? '', 0, 120, '...'))); ?></td>
                             <td>R$ <?php echo number_format($p['price'],2,',','.'); ?></td>
                             <td class="actions">
                                 <a class="edit" href="/src/pages/admin/edit_product.php?id=<?php echo $p['id']; ?>">editar</a>
