@@ -29,6 +29,9 @@ if (!isLogged() || empty($_SESSION['is_admin'])) {
                     <li><a href="/src/pages/admin/admin-categorias.php"><i class="fas fa-tags"></i> Categorias</a></li>
                     <li><a href="/src/pages/admin/admin-usuarios.php"><i class="fas fa-users"></i> Usuários</a></li>
                 </ul>
+                <div style="margin: 1rem 0 0 0; text-align: center;">
+                    <a href="/src/pages/client/index.php" class="btn btn-accent" style="display:inline-block; padding:8px 16px; background:#007bff; color:#fff; border-radius:4px; text-decoration:none;">Ir para Home Cliente</a>
+                </div>
             </nav>
             <div class="sidebar-footer">
                 <a href="/src/actions/logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
