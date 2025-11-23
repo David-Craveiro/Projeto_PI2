@@ -65,7 +65,8 @@ $products = queryAll('SELECT * FROM products ORDER BY id DESC');
                             <td><img src="<?php echo htmlspecialchars($p['image']); ?>" alt="" style="max-width:80px;"></td>
                             <td>R$ <?php echo number_format($p['price'],2,',','.'); ?></td>
                             <td class="actions">
-                                <form method="post" action="/src/actions/admin_delete_product.php" onsubmit="return confirm('Deseja excluir este produto?');">
+                                <a class="edit" href="/src/pages/admin/edit_product.php?id=<?php echo $p['id']; ?>">editar</a>
+                                <form method="post" action="/src/actions/admin_delete_product.php" onsubmit="return confirm('Deseja excluir este produto?');" style="display:inline-block; margin-left:6px;">
                                     <input type="hidden" name="id" value="<?php echo $p['id']; ?>">
                                     <button class="delete" type="submit">excluir</button>
                                 </form>

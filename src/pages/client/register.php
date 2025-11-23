@@ -3,14 +3,20 @@ require_once __DIR__ . '/../../includes/db.php';
 require_once __DIR__ . '/../../includes/header.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'];
+    $nome = trim($_POST['nome'] ?? '');
+    $telefone = trim($_POST['telefone'] ?? '');
+    $email = trim($_POST['email'] ?? '');
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    try {
-        $pdo->prepare('INSERT INTO users (email,password) VALUES (?,?)')->execute([$email,$password]);
-        header('Location: /src/pages/client/login.php');
-        exit;
-    } catch (Exception $e) {
-        $error = 'Erro ao cadastrar: ' . $e->getMessage();
+    if ($nome === '' || $telefone === '' || $email === '' || empty($_POST['password'])) {
+        $error = 'Preencha todos os campos.';
+    } else {
+        try {
+            $pdo->prepare('INSERT INTO users (nome, telefone, email, password) VALUES (?,?,?,?)')->execute([$nome, $telefone, $email, $password]);
+            header('Location: /src/pages/client/login.php');
+            exit;
+        } catch (Exception $e) {
+            $error = 'Erro ao cadastrar: ' . $e->getMessage();
+        }
     }
 }
 ?>
@@ -18,6 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h2>Cadastro</h2>
     <?php if(!empty($error)) echo '<p style="color:red;">'.htmlspecialchars($error).'</p>'; ?>
     <form method="post">
+        <input type="text" name="nome" placeholder="Nome completo" required>
+        <input type="text" name="telefone" placeholder="Telefone" required>
         <input type="email" name="email" placeholder="Email" required>
         <input type="password" name="password" placeholder="Senha" required>
         <button type="submit" class="btn btn-primary">Cadastrar</button>

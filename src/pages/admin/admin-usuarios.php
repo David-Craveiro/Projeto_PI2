@@ -6,7 +6,7 @@ if (!isLogged() || empty($_SESSION['is_admin'])) {
     exit;
 }
 
-$users = queryAll('SELECT id, email, is_admin FROM users ORDER BY id DESC');
+$users = queryAll('SELECT id, nome, telefone, email, is_admin FROM users ORDER BY id DESC');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -44,6 +44,8 @@ $users = queryAll('SELECT id, email, is_admin FROM users ORDER BY id DESC');
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Nome</th>
+                            <th>Telefone</th>
                             <th>Email</th>
                             <th>Admin</th>
                             <th>Ações</th>
@@ -53,6 +55,8 @@ $users = queryAll('SELECT id, email, is_admin FROM users ORDER BY id DESC');
                         <?php foreach($users as $u): ?>
                         <tr>
                             <td><?php echo $u['id']; ?></td>
+                            <td><?php echo htmlspecialchars($u['nome']); ?></td>
+                            <td><?php echo htmlspecialchars($u['telefone']); ?></td>
                             <td><?php echo htmlspecialchars($u['email']); ?>
                                 <?php if (!empty($_SESSION['user_id']) && $_SESSION['user_id'] == $u['id']): ?>
                                     <small> (você)</small>

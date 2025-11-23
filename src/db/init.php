@@ -31,7 +31,12 @@ $adminEmail = 'admin@deltastore.local';
 $stmt = $pdo->prepare('SELECT COUNT(*) FROM users WHERE email = ?');
 if ($stmt->execute([$adminEmail]) && $stmt->fetchColumn() == 0) {
     $hash = password_hash('admin123', PASSWORD_DEFAULT);
-    $pdo->prepare('INSERT INTO users (email,password,is_admin) VALUES (?,?,1)')->execute([$adminEmail, $hash]);
+    $pdo->prepare('INSERT INTO users (nome, telefone, email, password, is_admin) VALUES (?,?,?,?,1)')->execute([
+        'Administrador',
+        '(00) 00000-0000',
+        $adminEmail,
+        $hash
+    ]);
 }
 
 echo "Banco inicializado em: $dbFile\n";
