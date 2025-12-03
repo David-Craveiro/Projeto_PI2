@@ -21,30 +21,61 @@ if (!empty($cart)) {
 }
 ?>
 <main class="container">
-    <h1 class="section-title" style="margin-top: 4rem;">Meu Carrinho</h1>
+    <h1 class="section-title">Meu Carrinho</h1>
+    
     <?php if(empty($items)): ?>
         <div class="empty-cart-message">
+            <i class="fas fa-shopping-cart" style="font-size: 4rem; color: var(--cor-texto-suave); margin-bottom: 1.5rem;"></i>
             <h2>Seu carrinho está vazio!</h2>
-            <a href="/src/pages/client/index.php" class="btn btn-primary" style="margin-top: 1rem;">Ver produtos</a>
+            <p>Adicione produtos ao seu carrinho para continuar comprando.</p>
+            <a href="/src/pages/client/index.php" class="btn btn-primary">Ver Produtos</a>
         </div>
     <?php else: ?>
-        <table class="cart-table">
-            <thead><tr><th>Produto</th><th>Preço</th><th>Quantidade</th><th>Subtotal</th></tr></thead>
-            <tbody>
-            <?php foreach($items as $it): ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($it['name']); ?></td>
-                    <td>R$ <?php echo number_format($it['price'],2,',','.'); ?></td>
-                    <td><?php echo $it['quantity']; ?></td>
-                    <td>R$ <?php echo number_format($it['subtotal'],2,',','.'); ?></td>
-                </tr>
-            <?php endforeach; ?>
-            </tbody>
-        </table>
-        <div class="cart-total">Total: R$ <?php echo number_format($total,2,',','.'); ?></div>
-        <form method="post" action="/src/actions/checkout.php">
-            <button class="btn btn-accent" type="submit">Finalizar compra</button>
-        </form>
+        <div class="cart-content">
+            <div class="cart-items">
+                <?php foreach($items as $it): ?>
+                <div class="cart-item">
+                    <div class="cart-item-image">
+                        <img src="<?php echo htmlspecialchars($it['image']); ?>" alt="<?php echo htmlspecialchars($it['name']); ?>">
+                    </div>
+                    <div class="cart-item-info">
+                        <h4><?php echo htmlspecialchars($it['name']); ?></h4>
+                        <p class="item-price">R$ <?php echo number_format($it['price'],2,',','.'); ?></p>
+                    </div>
+                    <div class="cart-item-quantity">
+                        <span class="quantity-label">Qtd:</span>
+                        <span class="quantity-value"><?php echo $it['quantity']; ?></span>
+                    </div>
+                    <div class="cart-item-subtotal">
+                        <span class="subtotal-label">Subtotal</span>
+                        <span class="subtotal-value">R$ <?php echo number_format($it['subtotal'],2,',','.'); ?></span>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+            
+            <div class="cart-summary">
+                <h3>Resumo do Pedido</h3>
+                <div class="divider"></div>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>R$ <?php echo number_format($total,2,',','.'); ?></span>
+                </div>
+                <div class="summary-row">
+                    <span>Frete</span>
+                    <span>Grátis</span>
+                </div>
+                <div class="divider"></div>
+                <div class="summary-total">
+                    <span>Total</span>
+                    <span>R$ <?php echo number_format($total,2,',','.'); ?></span>
+                </div>
+                <form method="post" action="/src/actions/checkout.php">
+                    <button class="btn btn-accent" type="submit">Finalizar Compra</button>
+                </form>
+                <a href="/src/pages/client/index.php" class="btn btn-secondary">Continuar Comprando</a>
+            </div>
+        </div>
     <?php endif; ?>
 </main>
 
