@@ -42,15 +42,41 @@ $products = queryAll('SELECT * FROM products ORDER BY id DESC');
         <main class="main-content">
             <header class="main-header">
                 <h2>Produtos</h2>
-                <form method="post" action="/src/actions/admin_add_product.php" class="add-product-form">
-                    <input type="text" name="name" placeholder="Nome do produto" required>
-                    <input type="text" name="image" placeholder="URL da imagem (ex: /src/assets/images/img.png)">
-                    <input type="number" step="0.01" name="price" placeholder="Preço" required>
-                    <input type="text" name="description" placeholder="Descrição do produto (curta)">
-                    <input type="number" name="stock" min="0" placeholder="Estoque">
-                    <button type="submit" class="btn-primary">Adicionar produto</button>
-                </form>
             </header>
+            
+            <section class="form-section">
+                <h3>Adicionar Novo Produto</h3>
+                <form method="post" action="/src/actions/admin_add_product.php" class="add-product-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nome do Produto</label>
+                            <input type="text" id="name" name="name" placeholder="Digite o nome do produto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Preço</label>
+                            <input type="number" id="price" step="0.01" name="price" placeholder="0.00" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="image">URL da Imagem</label>
+                            <input type="text" id="image" name="image" placeholder="/src/assets/images/produto.png">
+                        </div>
+                        <div class="form-group">
+                            <label for="stock">Estoque</label>
+                            <input type="number" id="stock" name="stock" min="0" placeholder="0">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Descrição</label>
+                        <textarea id="description" name="description" placeholder="Digite a descrição do produto" rows="3"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Adicionar Produto</button>
+                </form>
+            </section>
             <section class="content-table">
                 <table>
                     <thead>
@@ -69,13 +95,13 @@ $products = queryAll('SELECT * FROM products ORDER BY id DESC');
                         <tr>
                             <td><?php echo $p['id']; ?></td>
                             <td><?php echo htmlspecialchars($p['name']); ?></td>
-                            <td><img src="<?php echo htmlspecialchars($p['image']); ?>" alt="" style="max-width:80px;"></td>
+                            <td><img src="<?php echo htmlspecialchars($p['image']); ?>" alt="<?php echo htmlspecialchars($p['name']); ?>"></td>
                             <td><?php echo nl2br(htmlspecialchars(mb_strimwidth($p['description'] ?? '', 0, 120, '...'))); ?></td>
                             <td><?php echo (int)($p['stock'] ?? 0); ?></td>
                             <td>R$ <?php echo number_format($p['price'],2,',','.'); ?></td>
                             <td class="actions">
                                 <a class="edit" href="/src/pages/admin/edit_product.php?id=<?php echo $p['id']; ?>">editar</a>
-                                <form method="post" action="/src/actions/admin_delete_product.php" onsubmit="return confirm('Deseja excluir este produto?');" style="display:inline-block; margin-left:6px;">
+                                <form method="post" action="/src/actions/admin_delete_product.php" onsubmit="return confirm('Deseja excluir este produto?');">
                                     <input type="hidden" name="id" value="<?php echo $p['id']; ?>">
                                     <button class="delete" type="submit">excluir</button>
                                 </form>
