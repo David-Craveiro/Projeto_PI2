@@ -288,8 +288,43 @@ table th:nth-child(7) {
     text-align: center;
 }
 
+/* Estilos específicos para tabela de usuários */
+.content-table table td:nth-child(1),
+.content-table table th:nth-child(1) {
+    width: 60px;
+    text-align: center;
+}
+
+.content-table table td:nth-child(2),
+.content-table table th:nth-child(2) {
+    min-width: 150px;
+}
+
+.content-table table td:nth-child(3),
+.content-table table th:nth-child(3) {
+    min-width: 120px;
+}
+
+.content-table table td:nth-child(4),
+.content-table table th:nth-child(4) {
+    min-width: 200px;
+}
+
+.content-table table td:nth-child(5),
+.content-table table th:nth-child(5) {
+    width: 80px;
+    text-align: center;
+}
+
+.content-table table td:nth-child(6),
+.content-table table th:nth-child(6) {
+    width: 220px;
+    text-align: center;
+}
+
 .actions {
     white-space: nowrap;
+    text-align: center;
 }
 
 .actions form {

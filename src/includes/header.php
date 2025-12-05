@@ -19,9 +19,13 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 <body>
     <header>
         <div class="container">
-            <a href="/src/pages/client/index.php" class="logo-container">
-                <img src="/src/assets/images/logodelta.png" alt="Logo Delta"></a>
-            <span class="header-text">O universo gamer começa aqui</span>
+            <a href="/src/pages/admin/admin-index.php" class="admin-btn" style="margin-right:15px; padding:5px 10px; background-color:transparent; color:white; border:2px solid #6D28D9; border-radius:4px; text-decoration:none; font-weight:500; font-size:12px; transition:all 0.3s;">Acesso Administrador</a>
+            <div class="logo-section">
+                <a href="/src/pages/client/index.php" class="logo-container">
+                    <img src="/src/assets/images/logodelta.png" alt="Logo Delta">
+                </a>
+                <span class="header-text">O universo gamer começa aqui</span>
+            </div>
 
             <div class="header-icons">
                 <a href="/src/pages/client/carrinho.php" class="cart-icon">
@@ -29,9 +33,9 @@ if (session_status() === PHP_SESSION_NONE) session_start();
                     <span id="cart-count"><?php echo isset($_SESSION['cart']) ? array_sum($_SESSION['cart']) : 0; ?></span>
                 </a>
                 <?php if(!empty($_SESSION['user_email'])): ?>
-                    <a href="/src/actions/logout.php" style="margin-left:10px;">Sair</a>
+                    <a href="/src/actions/logout.php" class="auth-btn" style="margin-left:10px; padding:8px 16px; background-color:#1F232E; color:white; border:2px solid #F97316; border-radius:5px; text-decoration:none; font-weight:600; font-size:15px; transition:all 0.3s;">Sair</a>
                 <?php else: ?>
-                    <a href="/src/pages/client/login.php" style="margin-left:10px;">Entrar</a>
+                    <a href="/src/pages/client/login.php" class="auth-btn" style="margin-left:10px; padding:8px 16px; background-color:#F97316; color:white; border-radius:5px; text-decoration:none; font-weight:600; font-size:15px; transition:all 0.3s;">Entrar</a>
                 <?php endif; ?>
             </div>
         </div>

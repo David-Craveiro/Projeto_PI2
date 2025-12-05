@@ -104,10 +104,15 @@ header .container {
     align-items: center;
     height: 100%; /* Garante que o container tenha a altura total do header */
 }
-.logo-container {
+.logo-section {
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex: 1;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
 }
 .logo-container img { height: 40px; }
 .header-text { font-weight: 700; }

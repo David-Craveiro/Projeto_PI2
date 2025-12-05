@@ -14,6 +14,7 @@ $products = queryAll('SELECT * FROM products ORDER BY id DESC');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos - Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/src/pages/admin/styles/admin-style.css">
     <link rel="stylesheet" href="/src/pages/client/styles/style.css">
 </head>
@@ -27,7 +28,6 @@ $products = queryAll('SELECT * FROM products ORDER BY id DESC');
                 <ul>
                     <li><a href="/src/pages/admin/admin-index.php"><i class="fas fa-home"></i> Home</a></li>
                     <li class="active"><a href="/src/pages/admin/admin-produtos.php"><i class="fas fa-box-open"></i> Produtos</a></li>
-                    <li><a href="/src/pages/admin/admin-categorias.php"><i class="fas fa-tags"></i> Categorias</a></li>
                     <li><a href="/src/pages/admin/admin-usuarios.php"><i class="fas fa-users"></i> Usuários</a></li>
                 </ul>
                 <div style="margin: 1rem 0 0 0; text-align: center;">

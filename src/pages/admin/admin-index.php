@@ -26,7 +26,6 @@ if (!isLogged() || empty($_SESSION['is_admin'])) {
                 <ul>
                     <li class="active"><a href="/src/pages/admin/admin-index.php"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="/src/pages/admin/admin-produtos.php"><i class="fas fa-box-open"></i> Produtos</a></li>
-                    <li><a href="/src/pages/admin/admin-categorias.php"><i class="fas fa-tags"></i> Categorias</a></li>
                     <li><a href="/src/pages/admin/admin-usuarios.php"><i class="fas fa-users"></i> Usuários</a></li>
                 </ul>
                 <div style="margin: 1rem 0 0 0; text-align: center;">
