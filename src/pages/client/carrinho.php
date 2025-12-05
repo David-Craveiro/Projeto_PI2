@@ -43,12 +43,29 @@ if (!empty($cart)) {
                         <p class="item-price">R$ <?php echo number_format($it['price'],2,',','.'); ?></p>
                     </div>
                     <div class="cart-item-quantity">
-                        <span class="quantity-label">Qtd:</span>
-                        <span class="quantity-value"><?php echo $it['quantity']; ?></span>
+                        <span class="quantity-label">Quantidade:</span>
+                        <form method="post" action="/src/actions/cart.php" class="quantity-form">
+                            <input type="hidden" name="product_id" value="<?php echo $it['id']; ?>">
+                            <input type="hidden" name="action" value="update">
+                            <div class="quantity-controls">
+                                <button type="button" class="quantity-btn" onclick="decrementQuantity(this)">-</button>
+                                <input type="number" name="quantity" value="<?php echo $it['quantity']; ?>" min="1" class="quantity-input" onchange="this.form.submit()">
+                                <button type="button" class="quantity-btn" onclick="incrementQuantity(this)">+</button>
+                            </div>
+                        </form>
                     </div>
                     <div class="cart-item-subtotal">
                         <span class="subtotal-label">Subtotal</span>
                         <span class="subtotal-value">R$ <?php echo number_format($it['subtotal'],2,',','.'); ?></span>
+                    </div>
+                    <div class="cart-item-actions">
+                        <form method="post" action="/src/actions/cart.php" style="display: inline;">
+                            <input type="hidden" name="product_id" value="<?php echo $it['id']; ?>">
+                            <input type="hidden" name="action" value="remove">
+                            <button type="submit" class="btn-remove-item" title="Remover item">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
                 <?php endforeach; ?>
@@ -78,5 +95,21 @@ if (!empty($cart)) {
         </div>
     <?php endif; ?>
 </main>
+
+<script>
+function incrementQuantity(btn) {
+    const input = btn.parentElement.querySelector('.quantity-input');
+    input.value = parseInt(input.value) + 1;
+    input.form.submit();
+}
+
+function decrementQuantity(btn) {
+    const input = btn.parentElement.querySelector('.quantity-input');
+    if (parseInt(input.value) > 1) {
+        input.value = parseInt(input.value) - 1;
+        input.form.submit();
+    }
+}
+</script>
 
 <?php require_once __DIR__ . '/../../includes/footer.php'; ?>
